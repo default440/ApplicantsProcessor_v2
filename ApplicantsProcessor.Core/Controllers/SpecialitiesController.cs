@@ -1,4 +1,5 @@
 ﻿using ApplicantsProcessor.Core.Models;
+using ApplicantsProcessor.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApplicantsProcessor.Core.Controllers
@@ -10,7 +11,11 @@ namespace ApplicantsProcessor.Core.Controllers
         [HttpGet("get")]
         public IEnumerable<Speciality> GetSpecialities()
         {
-            throw new NotImplementedException();
+            SpecialitySevice specialitySevice = new();
+
+            var specialities = specialitySevice.GetSpecialities();
+
+            return specialities;
         }
     }
 }
