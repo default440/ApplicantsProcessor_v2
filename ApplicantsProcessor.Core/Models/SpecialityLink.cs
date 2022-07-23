@@ -6,6 +6,6 @@
 
         public string Name { get; set; }
 
-        public string University { get; set; }
+        public University University { get; set; }
     }
 }

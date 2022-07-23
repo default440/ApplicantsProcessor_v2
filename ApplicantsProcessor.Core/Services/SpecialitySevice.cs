@@ -15,10 +15,10 @@ namespace ApplicantsProcessor.Core.Services
         static SpecialitySevice()
         {
             var specialitiesUndergraduate = JsonConvert
-                .DeserializeObject<IEnumerable<Speciality>>(File.ReadAllText(undergraduateFilePath)) ?? new List<Speciality>();
+                .DeserializeObject<IEnumerable<Speciality>>(File.ReadAllText(undergraduateFilePath)) ?? Enumerable.Empty<Speciality>();
 
             var specialitiesSpecialty = JsonConvert
-                .DeserializeObject<IEnumerable<Speciality>>(File.ReadAllText(specialtyFilePath)) ?? new List<Speciality>();
+                .DeserializeObject<IEnumerable<Speciality>>(File.ReadAllText(specialtyFilePath)) ?? Enumerable.Empty<Speciality>();
 
             specialities = specialitiesUndergraduate
                 .Concat(specialitiesSpecialty
