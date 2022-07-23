@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ApplicantsProcessor.Core.Models;
 using ApplicantsProcessor.Core.Services;
+using Microsoft.AspNetCore.Cors;
 
 namespace ApplicantsProcessor.Core.Controllers
 {
+    [EnableCors("Policy")]
     [ApiController]
     [Route("applicants")]
     public class ApplicantsController : Controller
