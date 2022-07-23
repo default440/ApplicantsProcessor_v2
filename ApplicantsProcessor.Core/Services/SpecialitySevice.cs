@@ -5,10 +5,8 @@ namespace ApplicantsProcessor.Core.Services
 {
     public class SpecialitySevice
     {
-        private static readonly string undergraduateFilePath =
-            @"C:\Users\Default_Laptop\Source\Repos\ApplicantsProcessor_v2\ApplicantsProcessor.Core\Data\SpecialitiesUndergraduate.json";
-        private static readonly string specialtyFilePath =
-            @"C:\Users\Default_Laptop\Source\Repos\ApplicantsProcessor_v2\ApplicantsProcessor.Core\Data\SpecialitiesSpecialty.json";
+        private static readonly string undergraduateFilePath = @".\Data\SpecialitiesUndergraduate.json";
+        private static readonly string specialtyFilePath = @".\Data\SpecialitiesSpecialty.json";
 
         private static readonly IEnumerable<Speciality> specialities;
 
