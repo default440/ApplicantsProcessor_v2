@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { takeUntil } from 'rxjs';
+import { University } from '../models/University';
 
 @Component({
   selector: 'app-index',
@@ -8,12 +7,15 @@ import { takeUntil } from 'rxjs';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent {
-  constructor(private httpClient: HttpClient) { }
+  code: string = '';
+  university: University = University.Default;
 
-  onEdit(event: any) { // without type info
-    console.log(event.target.value);
+  onChangedCode(event: any) {
+    this.code = event as string;
+  }
 
-    this.httpClient.get("https://192.168.0.19:7101/specialities/get").subscribe(x => console.log(x))
+  onChangedUniversity(event: any) {
+    this.university = event as University;
   }
 }
 

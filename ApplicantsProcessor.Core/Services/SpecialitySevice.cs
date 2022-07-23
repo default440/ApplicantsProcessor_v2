@@ -8,10 +8,13 @@ namespace ApplicantsProcessor.Core.Services
         private static readonly string undergraduateFilePath = "./Data/SpecialitiesUndergraduate.json";
         private static readonly string specialtyFilePath = "./Data/SpecialitiesSpecialty.json";
 
-        private static readonly IEnumerable<Speciality> specialities;
+        private readonly IEnumerable<Speciality> specialities;
 
-        static SpecialitySevice()
+        public SpecialitySevice()
         {
+            Console.WriteLine("Undergraduate file exist: " + File.Exists(undergraduateFilePath));
+            Console.WriteLine("Specialty file exist: " + File.Exists(specialtyFilePath));
+
             var specialitiesUndergraduate = JsonConvert
                 .DeserializeObject<IEnumerable<Speciality>>(File.ReadAllText(undergraduateFilePath)) ?? Enumerable.Empty<Speciality>();
 
@@ -26,6 +29,8 @@ namespace ApplicantsProcessor.Core.Services
                         return x;
                     }))
                 .Where(x => x.Links.Any());
+
+            Console.WriteLine("Count of specialities: " + specialities.Count());
         }
 
         public IEnumerable<Speciality> GetSpecialities()

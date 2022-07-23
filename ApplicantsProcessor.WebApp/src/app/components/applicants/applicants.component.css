@@ -1,0 +1,18 @@
+label {
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+.specialityName {
+    margin-left: 16px;
+}
+
+.table1 {
+    border: 1px solid;
+    text-align: center;
+}
+
+.table2 {
+    border: 1px dotted;
+    text-align: center;
+}

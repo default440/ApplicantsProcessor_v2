@@ -1,0 +1,44 @@
+<label *ngIf="specialityName">Name of speciality:   </label>
+<label class="specialityName" *ngIf="specialityName">{{specialityName}}</label>
+
+<div *ngIf="applicants[0]?.length">
+    <table class="table" *ngFor="let applicantsBySpecialities of applicants">
+        <thead>
+            <tr>
+                <th class="table1">Id</th>
+                <th class="table1">Score</th>
+                <th class="table1">Plans</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="border: medium" *ngFor="let applicant of applicantsBySpecialities">
+                <td class="table1">{{applicant.id}}</td>
+                <td class="table1">{{applicant.score}}</td>
+                <td class="table1">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="table2">Name</th>
+                                <th class="table2">Priority</th>
+                                <th class="table2">State</th>
+                                <th class="table2">HasOriginal</th>
+                                <th class="table2">HasAgreement</th>
+                                <th class="table2">University</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: medium" *ngFor="let plan of applicant.plans">
+                                <td class="table2">{{plan.name}}</td>
+                                <td class="table2">{{plan.priority}}</td>
+                                <td class="table2">{{plan.state}}</td>
+                                <td class="table2">{{plan.hasOriginal}}</td>
+                                <td class="table2">{{plan.hasAgreement}}</td>
+                                <td class="table2">{{universityEnum[plan.university]}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

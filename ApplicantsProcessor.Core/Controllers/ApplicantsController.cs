@@ -11,7 +11,7 @@ namespace ApplicantsProcessor.Core.Controllers
     public class ApplicantsController : Controller
     {
         [HttpGet("get-by-code/{university}/{code}")]
-        public async Task<IEnumerable<IEnumerable<Applicant>>> GetApplicantsByCodeAsync([FromRoute] string code, [FromRoute] University university)
+        public async Task<IEnumerable<IEnumerable<Applicant>>> GetApplicantsByCodeAsync([FromRoute] University university, [FromRoute] string code)
         {
             ApplicantService applicantService = new();
 
@@ -21,7 +21,7 @@ namespace ApplicantsProcessor.Core.Controllers
         }
 
         [HttpGet("get-by-link/{university}")]
-        public async Task<IEnumerable<Applicant>> GetApplicantsByLinkAsync([FromQuery] string link, [FromRoute] University university)
+        public async Task<IEnumerable<Applicant>> GetApplicantsByLinkAsync([FromRoute] University university, [FromQuery] string link)
         {
             ApplicantService applicantService = new();
 

@@ -7,11 +7,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SpecialityComponent } from './components/speciality/speciality.component';
+import { ApplicantsComponent } from './components/applicants/applicants.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    MatSelectModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: IndexComponent },
@@ -20,6 +24,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     TopBarComponent,
+    SpecialityComponent,
+    ApplicantsComponent,
     IndexComponent
   ],
   bootstrap: [
