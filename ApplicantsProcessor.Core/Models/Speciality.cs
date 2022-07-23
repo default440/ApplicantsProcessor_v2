@@ -8,6 +8,6 @@
 
         public bool Undergraduate { get; set; }
 
-        public List<SpecialityLink> Links { get; set; } = new();
+        public IEnumerable<SpecialityLink> Links { get; set; }
     }
 }
